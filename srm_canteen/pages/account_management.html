@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Account Management - SRM Canteen</title>
+    <link rel="stylesheet" href="../css/main.css" />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fsrmcantee1316back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.6"></script>
+</head>
+<body class="bg-background min-h-screen">
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-md mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                        <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="text-lg font-bold text-text-primary">SRM Canteen</h1>
+                        <p class="text-xs text-text-secondary">Account Settings</p>
+                    </div>
+                </div>
+                
+                <!-- Settings Icon -->
+                <button class="text-gray-400 hover:text-gray-600 transition-smooth">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Profile Header -->
+    <section class="bg-gradient-to-r from-primary-50 to-secondary-50 border-b border-gray-200">
+        <div class="max-w-md mx-auto px-4 py-6">
+            <div class="flex items-center space-x-4">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="Profile Picture" class="w-16 h-16 rounded-full object-cover border-2 border-white shadow-sm" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                    <button class="absolute -bottom-1 -right-1 bg-primary text-white rounded-full p-1 shadow-sm">
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="flex-1">
+                    <h2 class="text-xl font-bold text-text-primary">Rahul Sharma</h2>
+                    <p class="text-sm text-text-secondary">Student ID: RA2111003010156</p>
+                    <p class="text-sm text-text-secondary">Computer Science Engineering</p>
+                    <div class="flex items-center space-x-2 mt-1">
+                        <div class="w-2 h-2 bg-success-500 rounded-full"></div>
+                        <span class="text-xs text-success-600 font-medium">Active Member</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Account Settings -->
+    <section class="flex-1 bg-surface">
+        <div class="max-w-md mx-auto px-4 py-6 space-y-6">
+            
+            <!-- Personal Information -->
+            <div class="card p-4">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-lg font-semibold text-text-primary">Personal Information</h3>
+                    <button class="text-primary-600 text-sm font-medium hover:text-primary-700 transition-smooth">
+                        Edit
+                    </button>
+                </div>
+                <div class="space-y-3">
+                    <div>
+                        <label class="text-sm font-medium text-text-secondary">Full Name</label>
+                        <p class="text-text-primary">Rahul Sharma</p>
+                    </div>
+                    <div>
+                        <label class="text-sm font-medium text-text-secondary">Email</label>
+                        <p class="text-text-primary">rahul.sharma@srmist.edu.in</p>
+                    </div>
+                    <div>
+                        <label class="text-sm font-medium text-text-secondary">Phone Number</label>
+                        <p class="text-text-primary">+91 98765 43210</p>
+                    </div>
+                    <div>
+                        <label class="text-sm font-medium text-text-secondary">Student ID</label>
+                        <p class="text-text-primary font-mono">RA2111003010156</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payment Methods -->
+            <div class="card p-4">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-lg font-semibold text-text-primary">Payment Methods</h3>
+                    <button class="text-primary-600 text-sm font-medium hover:text-primary-700 transition-smooth">
+                        Add New
+                    </button>
+                </div>
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between p-3 bg-accent-50 rounded-lg border border-accent-200">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-accent-600 rounded-lg flex items-center justify-center">
+                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="font-medium text-text-primary">UPI - GPay</p>
+                                <p class="text-sm text-text-secondary">rahul@oksbi</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="bg-success-100 text-success-600 text-xs px-2 py-1 rounded-full font-medium">Default</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-200">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-gray-400 rounded-lg flex items-center justify-center">
+                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="font-medium text-text-primary">Debit Card</p>
+                                <p class="text-sm text-text-secondary">**** **** **** 4567</p>
+                            </div>
+                        </div>
+                        <button class="text-gray-400 hover:text-gray-600 transition-smooth">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-200">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-secondary-500 rounded-lg flex items-center justify-center">
+                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.41 16.09V16h-2.67v2.09c-2.84-.48-5.09-2.8-5.09-5.59s2.25-5.11 5.09-5.59V9h2.67v-2.09c2.84.48 5.09 2.8 5.09 5.59s-2.25 5.11-5.09 5.59z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="font-medium text-text-primary">Cash Counter</p>
+                                <p class="text-sm text-text-secondary">Pay at pickup</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dietary Preferences -->
+            <div class="card p-4">
+                <h3 class="text-lg font-semibold text-text-primary mb-4">Dietary Preferences</h3>
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="font-medium text-text-primary">Vegetarian</p>
+                            <p class="text-sm text-text-secondary">Only show vegetarian items</p>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" checked class="sr-only peer" />
+                            <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-600"></div>
+                        </label>
+                    </div>
+                    
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="font-medium text-text-primary">Vegan</p>
+                            <p class="text-sm text-text-secondary">No animal products</p>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" class="sr-only peer" />
+                            <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-600"></div>
+                        </label>
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="font-medium text-text-primary">Gluten-Free</p>
+                            <p class="text-sm text-text-secondary">Avoid gluten-containing items</p>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" class="sr-only peer" />
+                            <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-600"></div>
+                        </label>
+                    </div>
+
+                    <div>
+                        <label class="text-sm font-medium text-text-secondary mb-2 block">Food Allergies</label>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-error-100 text-error-600 px-3 py-1 rounded-full text-sm font-medium">Nuts</span>
+                            <button class="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-sm font-medium hover:bg-gray-200 transition-smooth">
+                                + Add Allergy
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Meal Planning -->
+            <div class="card p-4">
+                <h3 class="text-lg font-semibold text-text-primary mb-4">Meal Planning</h3>
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="font-medium text-text-primary">Auto-order based on schedule</p>
+                            <p class="text-sm text-text-secondary">Pre-order meals for your class breaks</p>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" checked class="sr-only peer" />
+                            <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-600"></div>
+                        </label>
+                    </div>
+
+                    <div class="bg-accent-50 rounded-lg p-3 border border-accent-200">
+                        <div class="flex items-center space-x-2 mb-2">
+                            <svg class="w-4 h-4 text-accent-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <p class="text-sm font-medium text-accent-600">Next Scheduled Meal</p>
+                        </div>
+                        <p class="text-sm text-text-primary">Tomorrow 1:30 PM - Lunch Break</p>
+                        <p class="text-xs text-text-secondary">Masala Dosa + Chai (Your usual order)</p>
+                        <button class="text-xs text-accent-600 font-medium mt-1 hover:text-accent-700 transition-smooth">
+                            Modify Order
+                        </button>
+                    </div>
+
+                    <button class="w-full bg-gray-50 text-gray-600 py-3 rounded-lg font-medium hover:bg-gray-100 transition-smooth">
+                        <div class="flex items-center justify-center space-x-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                            <span>Sync with Academic Calendar</span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Notification Settings -->
+            <div class="card p-4">
+                <h3 class="text-lg font-semibold text-text-primary mb-4">Notification Settings</h3>
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="font-medium text-text-primary">Order Updates</p>
+                            <p class="text-sm text-text-secondary">Status changes and pickup notifications</p>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" checked class="sr-only peer" />
+                            <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-600"></div>
+                        </label>
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="font-medium text-text-primary">Daily Specials</p>
+                            <p class="text-sm text-text-secondary">New menu items and offers</p>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" checked class="sr-only peer" />
+                            <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-600"></div>
+                        </label>
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="font-medium text-text-primary">Promotional Offers</p>
+                            <p class="text-sm text-text-secondary">Discounts and combo deals</p>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" class="sr-only peer" />
+                            <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-600"></div>
+                        </label>
+                    </div>
+
+                    <div>
+                        <p class="text-sm font-medium text-text-secondary mb-2">Notification Methods</p>
+                        <div class="flex space-x-2">
+                            <button class="flex-1 bg-primary-50 text-primary-600 py-2 px-3 rounded-lg text-sm font-medium border border-primary-200">Push</button>
+                            <button class="flex-1 bg-gray-50 text-gray-600 py-2 px-3 rounded-lg text-sm font-medium border border-gray-200">SMS</button>
+                            <button class="flex-1 bg-gray-50 text-gray-600 py-2 px-3 rounded-lg text-sm font-medium border border-gray-200">Email</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Privacy Settings -->
+            <div class="card p-4">
+                <h3 class="text-lg font-semibold text-text-primary mb-4">Privacy Settings</h3>
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="font-medium text-text-primary">Share Favorite Meals</p>
+                            <p class="text-sm text-text-secondary">Let friends see your meal preferences</p>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" class="sr-only peer" />
+                            <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-600"></div>
+                        </label>
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="font-medium text-text-primary">Campus Food Discussions</p>
+                            <p class="text-sm text-text-secondary">Participate in food reviews and ratings</p>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" checked class="sr-only peer" />
+                            <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-600"></div>
+                        </label>
+                    </div>
+
+                    <button class="w-full text-left text-text-secondary text-sm hover:text-text-primary transition-smooth">
+                        View Privacy Policy →
+                    </button>
+                </div>
+            </div>
+
+            <!-- Account Actions -->
+            <div class="card p-4">
+                <h3 class="text-lg font-semibold text-text-primary mb-4">Account Actions</h3>
+                <div class="space-y-3">
+                    <button class="w-full text-left p-3 hover:bg-gray-50 rounded-lg transition-smooth">
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                            </svg>
+                            <div>
+                                <p class="font-medium text-text-primary">Change Password</p>
+                                <p class="text-sm text-text-secondary">Update your account password</p>
+                            </div>
+                        </div>
+                    </button>
+
+                    <button class="w-full text-left p-3 hover:bg-gray-50 rounded-lg transition-smooth">
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                            </svg>
+                            <div>
+                                <p class="font-medium text-text-primary">Download Data</p>
+                                <p class="text-sm text-text-secondary">Export your order history and data</p>
+                            </div>
+                        </div>
+                    </button>
+
+                    <button class="w-full text-left p-3 hover:bg-error-50 rounded-lg transition-smooth text-error-600">
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/>
+                            </svg>
+                            <div>
+                                <p class="font-medium">Sign Out</p>
+                                <p class="text-sm text-error-500">Sign out from your account</p>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- App Info -->
+            <div class="text-center py-4">
+                <p class="text-sm text-text-secondary">SRM Canteen v2.1.0</p>
+                <p class="text-xs text-text-secondary mt-1">© 2025 SRM Institute of Science and Technology</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom Navigation -->
+    <nav class="bg-white border-t border-gray-200 sticky bottom-0">
+        <div class="max-w-md mx-auto px-4 py-2">
+            <div class="flex items-center justify-around">
+                <a href="homepage_order_interface.html" class="flex flex-col items-center py-2 px-3 text-gray-400 hover:text-primary-600 transition-smooth">
+                    <svg class="w-5 h-5 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                    </svg>
+                    <span class="text-xs">Home</span>
+                </a>
+                <a href="menu_catalog.html" class="flex flex-col items-center py-2 px-3 text-gray-400 hover:text-primary-600 transition-smooth">
+                    <svg class="w-5 h-5 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                    </svg>
+                    <span class="text-xs">Menu</span>
+                </a>
+                <a href="live_status_dashboard.html" class="flex flex-col items-center py-2 px-3 text-gray-400 hover:text-primary-600 transition-smooth">
+                    <svg class="w-5 h-5 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                    </svg>
+                    <span class="text-xs">Status</span>
+                </a>
+                <a href="my_orders_tracking_hub.html" class="flex flex-col items-center py-2 px-3 text-gray-400 hover:text-primary-600 transition-smooth relative">
+                    <svg class="w-5 h-5 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+                    </svg>
+                    <span class="text-xs">Orders</span>
+                    <span class="absolute -top-1 -right-1 bg-primary text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">2</span>
+                </a>
+                <a href="account_management.html" class="flex flex-col items-center py-2 px-3 text-primary-600">
+                    <svg class="w-5 h-5 mb-1" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                    </svg>
+                    <span class="text-xs font-medium">Account</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        // Toggle switches functionality
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                // Add any toggle functionality here
+                console.log(`${this.closest('.flex').querySelector('p').textContent} toggled: ${this.checked}`);
+            });
+        });
+
+        // Payment method selection
+        document.querySelectorAll('.card .flex').forEach(paymentMethod => {
+            paymentMethod.addEventListener('click', function() {
+                // Remove default status from all payment methods
+                document.querySelectorAll('.status-success').forEach(status => {
+                    status.classList.remove('bg-success-100', 'text-success-600');
+                    status.classList.add('bg-gray-100', 'text-gray-600');
+                    status.textContent = 'Set Default';
+                });
+                
+                // Add default status to clicked payment method
+                const statusBadge = this.querySelector('span');
+                if (statusBadge) {
+                    statusBadge.classList.remove('bg-gray-100', 'text-gray-600');
+                    statusBadge.classList.add('bg-success-100', 'text-success-600');
+                    statusBadge.textContent = 'Default';
+                }
+            });
+        });
+
+        // Notification method selection
+        document.querySelectorAll('[data-notification-method]').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active state from all buttons
+                document.querySelectorAll('[data-notification-method]').forEach(btn => {
+                    btn.classList.remove('bg-primary-50', 'text-primary-600', 'border-primary-200');
+                    btn.classList.add('bg-gray-50', 'text-gray-600', 'border-gray-200');
+                });
+                
+                // Add active state to clicked button
+                this.classList.remove('bg-gray-50', 'text-gray-600', 'border-gray-200');
+                this.classList.add('bg-primary-50', 'text-primary-600', 'border-primary-200');
+            });
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

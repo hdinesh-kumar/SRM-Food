@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Live Status Dashboard - SRM Canteen</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <style>
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        @keyframes fadeOut {
+            0% { opacity: 1; }
+            100% { opacity: 0.4; }
+        }
+        .fade-out {
+            animation: fadeOut 3s ease-out forwards;
+        }
+        @keyframes slideIn {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(0); }
+        }
+        .slide-in {
+            animation: slideIn 0.5s ease-out;
+        }
+        .order-number {
+            font-size: 4.5rem;
+            line-height: 1;
+        }
+        @media (max-width: 1024px) {
+            .order-number {
+                font-size: 3rem;
+            }
+        }
+    </style>
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fsrmcantee1316back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.6"></script>
+</head>
+<body class="bg-gray-900 min-h-screen text-white overflow-hidden">
+    <!-- Header with Branding and Time -->
+    <header class="bg-gray-800 border-b border-gray-700 px-8 py-4">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <div class="w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
+                    <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                </div>
+                <div>
+                    <h1 class="text-3xl font-bold text-white">SRM Canteen</h1>
+                    <p class="text-gray-400 text-lg">Live Order Status Dashboard</p>
+                </div>
+            </div>
+            
+            <div class="text-right">
+                <div class="text-2xl font-bold text-white" id="currentTime">2:16 PM</div>
+                <div class="text-gray-400 text-lg">Tuesday, July 30, 2025</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Queue Metrics Bar -->
+    <section class="bg-gray-800 border-b border-gray-700 px-8 py-6">
+        <div class="grid grid-cols-4 gap-8">
+            <div class="text-center">
+                <div class="text-4xl font-bold text-primary mb-2">23</div>
+                <div class="text-gray-400 text-lg">Active Orders</div>
+            </div>
+            <div class="text-center">
+                <div class="text-4xl font-bold text-secondary mb-2">8.5</div>
+                <div class="text-gray-400 text-lg">Avg Prep Time (min)</div>
+            </div>
+            <div class="text-center">
+                <div class="text-4xl font-bold text-accent mb-2">2:24 PM</div>
+                <div class="text-gray-400 text-lg">Next Completion</div>
+            </div>
+            <div class="text-center">
+                <div class="text-4xl font-bold text-success mb-2">156</div>
+                <div class="text-gray-400 text-lg">Orders Today</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Area -->
+    <div class="flex h-screen">
+        <!-- Order Status Grid -->
+        <main class="flex-1 p-8">
+            <!-- Ready for Pickup Ticker -->
+            <div class="bg-success-600 rounded-lg p-4 mb-8 slide-in">
+                <div class="flex items-center justify-center space-x-4">
+                    <svg class="w-8 h-8 text-white pulse-animation" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                    <div class="text-2xl font-bold text-white">
+                        READY FOR PICKUP: Orders #1247, #1251, #1253
+                    </div>
+                    <svg class="w-8 h-8 text-white pulse-animation" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Order Grid -->
+            <div class="grid grid-cols-6 gap-6">
+                <!-- Preparing Orders -->
+                <div class="bg-warning-500 rounded-xl p-6 text-center hover:shadow-lg transition-smooth">
+                    <div class="order-number font-bold text-gray-900 mb-2">#1254</div>
+                    <div class="text-xl font-semibold text-gray-900 mb-1">PREPARING</div>
+                    <div class="text-gray-800">Est: 5 min</div>
+                </div>
+
+                <div class="bg-warning-500 rounded-xl p-6 text-center hover:shadow-lg transition-smooth">
+                    <div class="order-number font-bold text-gray-900 mb-2">#1255</div>
+                    <div class="text-xl font-semibold text-gray-900 mb-1">PREPARING</div>
+                    <div class="text-gray-800">Est: 7 min</div>
+                </div>
+
+                <div class="bg-warning-500 rounded-xl p-6 text-center hover:shadow-lg transition-smooth">
+                    <div class="order-number font-bold text-gray-900 mb-2">#1256</div>
+                    <div class="text-xl font-semibold text-gray-900 mb-1">PREPARING</div>
+                    <div class="text-gray-800">Est: 3 min</div>
+                </div>
+
+                <!-- Ready for Pickup Orders -->
+                <div class="bg-success-500 rounded-xl p-6 text-center pulse-animation hover:shadow-lg transition-smooth">
+                    <div class="order-number font-bold text-white mb-2">#1247</div>
+                    <div class="text-xl font-semibold text-white mb-1">READY</div>
+                    <div class="text-green-100">Pick up now!</div>
+                </div>
+
+                <div class="bg-success-500 rounded-xl p-6 text-center pulse-animation hover:shadow-lg transition-smooth">
+                    <div class="order-number font-bold text-white mb-2">#1251</div>
+                    <div class="text-xl font-semibold text-white mb-1">READY</div>
+                    <div class="text-green-100">Pick up now!</div>
+                </div>
+
+                <div class="bg-success-500 rounded-xl p-6 text-center pulse-animation hover:shadow-lg transition-smooth">
+                    <div class="order-number font-bold text-white mb-2">#1253</div>
+                    <div class="text-xl font-semibold text-white mb-1">READY</div>
+                    <div class="text-green-100">Pick up now!</div>
+                </div>
+
+                <!-- More Preparing Orders -->
+                <div class="bg-warning-500 rounded-xl p-6 text-center hover:shadow-lg transition-smooth">
+                    <div class="order-number font-bold text-gray-900 mb-2">#1257</div>
+                    <div class="text-xl font-semibold text-gray-900 mb-1">PREPARING</div>
+                    <div class="text-gray-800">Est: 12 min</div>
+                </div>
+
+                <div class="bg-warning-500 rounded-xl p-6 text-center hover:shadow-lg transition-smooth">
+                    <div class="order-number font-bold text-gray-900 mb-2">#1258</div>
+                    <div class="text-xl font-semibold text-gray-900 mb-1">PREPARING</div>
+                    <div class="text-gray-800">Est: 9 min</div>
+                </div>
+
+                <div class="bg-warning-500 rounded-xl p-6 text-center hover:shadow-lg transition-smooth">
+                    <div class="order-number font-bold text-gray-900 mb-2">#1259</div>
+                    <div class="text-xl font-semibold text-gray-900 mb-1">PREPARING</div>
+                    <div class="text-gray-800">Est: 15 min</div>
+                </div>
+
+                <!-- Completed Orders (Fading Out) -->
+                <div class="bg-gray-600 rounded-xl p-6 text-center fade-out hover:shadow-lg transition-smooth">
+                    <div class="order-number font-bold text-gray-300 mb-2">#1245</div>
+                    <div class="text-xl font-semibold text-gray-300 mb-1">COMPLETED</div>
+                    <div class="text-gray-400">2:14 PM</div>
+                </div>
+
+                <div class="bg-gray-600 rounded-xl p-6 text-center fade-out hover:shadow-lg transition-smooth">
+                    <div class="order-number font-bold text-gray-300 mb-2">#1246</div>
+                    <div class="text-xl font-semibold text-gray-300 mb-1">COMPLETED</div>
+                    <div class="text-gray-400">2:15 PM</div>
+                </div>
+
+                <div class="bg-warning-500 rounded-xl p-6 text-center hover:shadow-lg transition-smooth">
+                    <div class="order-number font-bold text-gray-900 mb-2">#1260</div>
+                    <div class="text-xl font-semibold text-gray-900 mb-1">PREPARING</div>
+                    <div class="text-gray-800">Est: 18 min</div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Sidebar with Popular Items -->
+        <aside class="w-80 bg-gray-800 border-l border-gray-700 p-6">
+            <h2 class="text-2xl font-bold text-white mb-6">Popular Right Now</h2>
+            
+            <div class="space-y-4 mb-8">
+                <div class="bg-gray-700 rounded-lg p-4 flex items-center space-x-4">
+                    <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Masala Dosa" class="w-16 h-16 object-cover rounded-lg" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                    <div class="flex-1">
+                        <h3 class="font-semibold text-white">Masala Dosa</h3>
+                        <p class="text-gray-400 text-sm">₹45</p>
+                        <div class="flex items-center space-x-1 mt-1">
+                            <div class="w-2 h-2 bg-success-500 rounded-full animate-pulse"></div>
+                            <span class="text-success-400 text-sm">12 orders today</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-700 rounded-lg p-4 flex items-center space-x-4">
+                    <img src="https://images.pixabay.com/photos/2017/06/16/11/38/breakfast-2408818_960_720.jpg" alt="Vada Pav" class="w-16 h-16 object-cover rounded-lg" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                    <div class="flex-1">
+                        <h3 class="font-semibold text-white">Vada Pav</h3>
+                        <p class="text-gray-400 text-sm">₹25</p>
+                        <div class="flex items-center space-x-1 mt-1">
+                            <div class="w-2 h-2 bg-warning-500 rounded-full animate-pulse"></div>
+                            <span class="text-warning-400 text-sm">8 orders today</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-700 rounded-lg p-4 flex items-center space-x-4">
+                    <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=400&q=80" alt="Masala Chai" class="w-16 h-16 object-cover rounded-lg" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                    <div class="flex-1">
+                        <h3 class="font-semibold text-white">Masala Chai</h3>
+                        <p class="text-gray-400 text-sm">₹15</p>
+                        <div class="flex items-center space-x-1 mt-1">
+                            <div class="w-2 h-2 bg-accent-500 rounded-full animate-pulse"></div>
+                            <span class="text-accent-400 text-sm">15 orders today</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Daily Special Promotion -->
+            <div class="bg-gradient-to-br from-primary-600 to-secondary-600 rounded-lg p-6 text-center">
+                <h3 class="text-xl font-bold text-white mb-2">Today's Special</h3>
+                <img src="https://images.pixabay.com/photos/2017/12/09/08/18/pizza-3007395_960_720.jpg" alt="Special Thali" class="w-full h-32 object-cover rounded-lg mb-3" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                <p class="text-white font-semibold">South Indian Thali</p>
+                <p class="text-orange-100 text-sm mb-2">Complete meal with rice, sambar, rasam & more</p>
+                <div class="flex items-center justify-center space-x-2">
+                    <span class="text-orange-200 line-through text-sm">₹120</span>
+                    <span class="text-white font-bold text-lg">₹99</span>
+                </div>
+            </div>
+
+            <!-- Staff Override Panel -->
+            <div class="mt-8 bg-gray-700 rounded-lg p-4">
+                <h3 class="text-lg font-semibold text-white mb-4">Staff Controls</h3>
+                <div class="space-y-2">
+                    <a href="admin_control_panel.html" class="block w-full bg-accent text-white py-2 px-4 rounded-lg text-center font-medium hover:bg-accent-700 transition-smooth">
+                        Admin Panel
+                    </a>
+                    <button class="w-full bg-gray-600 text-white py-2 px-4 rounded-lg font-medium hover:bg-gray-500 transition-smooth">
+                        Manual Refresh
+                    </button>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Navigation Links (Hidden but accessible) -->
+    <div class="hidden">
+        <a href="homepage_order_interface.html">Home</a>
+        <a href="menu_catalog.html">Menu</a>
+        <a href="my_orders_tracking_hub.html">My Orders</a>
+        <a href="account_management.html">Account</a>
+        <a href="admin_control_panel.html">Admin</a>
+    </div>
+
+    <script>
+        // Update current time
+        function updateTime() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('en-US', { 
+                hour: 'numeric', 
+                minute: '2-digit',
+                hour12: true 
+            });
+            document.getElementById('currentTime').textContent = timeString;
+        }
+
+        // Auto-refresh functionality
+        function autoRefresh() {
+            // Simulate order status updates
+            const orderCards = document.querySelectorAll('.bg-warning-500, .bg-success-500');
+            
+            // Randomly update some orders
+            if (Math.random() > 0.7) {
+                const randomCard = orderCards[Math.floor(Math.random() * orderCards.length)];
+                if (randomCard && randomCard.classList.contains('bg-warning-500')) {
+                    // Change from preparing to ready
+                    randomCard.className = randomCard.className.replace('bg-warning-500', 'bg-success-500 pulse-animation');
+                    randomCard.querySelector('.text-gray-900').className = 'order-number font-bold text-white mb-2';
+                    randomCard.querySelector('.text-xl').className = 'text-xl font-semibold text-white mb-1';
+                    randomCard.querySelector('.text-xl').textContent = 'READY';
+                    randomCard.querySelector('.text-gray-800').className = 'text-green-100';
+                    randomCard.querySelector('.text-green-100').textContent = 'Pick up now!';
+                }
+            }
+        }
+
+        // Initialize
+        updateTime();
+        setInterval(updateTime, 1000);
+        setInterval(autoRefresh, 30000); // Refresh every 30 seconds
+
+        // Keyboard shortcuts for staff
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'F5' || (e.ctrlKey && e.key === 'r')) {
+                e.preventDefault();
+                location.reload();
+            }
+            if (e.key === 'Escape') {
+                window.location.href = 'admin_control_panel.html';
+            }
+        });
+
+        // Sound notification for ready orders (muted by default)
+        function playNotificationSound() {
+            // Create audio context for notification sound
+            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            const oscillator = audioContext.createOscillator();
+            const gainNode = audioContext.createGain();
+            
+            oscillator.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+            
+            oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
+            gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+            
+            oscillator.start();
+            oscillator.stop(audioContext.currentTime + 0.2);
+        }
+
+        // Simulate new ready orders
+        setInterval(() => {
+            if (Math.random() > 0.9) {
+                playNotificationSound();
+            }
+        }, 60000);
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

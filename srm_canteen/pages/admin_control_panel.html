@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Control Panel - SRM Canteen</title>
+    <link rel="stylesheet" href="../css/main.css" />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fsrmcantee1316back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.6"></script>
+</head>
+<body class="bg-surface min-h-screen">
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <!-- Logo & Title -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-text-primary">SRM Canteen Admin</h1>
+                        <p class="text-sm text-text-secondary">Control Panel</p>
+                    </div>
+                </div>
+                
+                <!-- Admin Actions -->
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-2 bg-success-50 px-3 py-2 rounded-lg">
+                        <div class="w-2 h-2 bg-success-500 rounded-full animate-pulse"></div>
+                        <span class="text-sm font-medium text-success-600">System Online</span>
+                    </div>
+                    
+                    <button class="bg-warning-50 text-warning-600 px-4 py-2 rounded-lg font-medium text-sm hover:bg-warning-100 transition-smooth">
+                        <svg class="w-4 h-4 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"/>
+                        </svg>
+                        Send Announcement
+                    </button>
+                    
+                    <a href="homepage_order_interface.html" class="text-gray-600 hover:text-primary-600 transition-smooth">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 py-6">
+        <!-- Key Metrics Dashboard -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold text-text-primary mb-6">Dashboard Overview</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Active Orders -->
+                <div class="card p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 bg-primary-50 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+                            </svg>
+                        </div>
+                        <span class="text-sm text-text-secondary">Live</span>
+                    </div>
+                    <h3 class="text-3xl font-bold text-text-primary mb-1">23</h3>
+                    <p class="text-sm text-text-secondary">Active Orders</p>
+                    <div class="mt-2 flex items-center text-success-600 text-sm">
+                        <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M7 14l3-3 3 3 5-5-1.41-1.41L12 12.17 9 9.17 4.41 13.76 7 14z"/>
+                        </svg>
+                        +12% from yesterday
+                    </div>
+                </div>
+
+                <!-- Average Prep Time -->
+                <div class="card p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 bg-accent-50 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-accent-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <span class="text-sm text-text-secondary">Avg</span>
+                    </div>
+                    <h3 class="text-3xl font-bold text-text-primary mb-1">8.5</h3>
+                    <p class="text-sm text-text-secondary">Minutes Prep Time</p>
+                    <div class="mt-2 flex items-center text-success-600 text-sm">
+                        <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M7 14l3-3 3 3 5-5-1.41-1.41L12 12.17 9 9.17 4.41 13.76 7 14z"/>
+                        </svg>
+                        -2.1 min improved
+                    </div>
+                </div>
+
+                <!-- Daily Revenue -->
+                <div class="card p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 bg-success-50 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-success-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"/>
+                            </svg>
+                        </div>
+                        <span class="text-sm text-text-secondary">Today</span>
+                    </div>
+                    <h3 class="text-3xl font-bold text-text-primary mb-1">₹18,450</h3>
+                    <p class="text-sm text-text-secondary">Daily Revenue</p>
+                    <div class="mt-2 flex items-center text-success-600 text-sm">
+                        <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M7 14l3-3 3 3 5-5-1.41-1.41L12 12.17 9 9.17 4.41 13.76 7 14z"/>
+                        </svg>
+                        +8.2% vs target
+                    </div>
+                </div>
+
+                <!-- Peak Hour Analytics -->
+                <div class="card p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 bg-secondary-50 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-secondary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                            </svg>
+                        </div>
+                        <span class="text-sm text-text-secondary">Peak</span>
+                    </div>
+                    <h3 class="text-3xl font-bold text-text-primary mb-1">1:30 PM</h3>
+                    <p class="text-sm text-text-secondary">Peak Hour Today</p>
+                    <div class="mt-2 flex items-center text-accent-600 text-sm">
+                        <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                        47 orders/hour
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Order Management Section -->
+        <section class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-2xl font-bold text-text-primary">Order Management</h2>
+                <div class="flex items-center space-x-3">
+                    <select class="input-field py-2 px-3 text-sm">
+                        <option>All Orders</option>
+                        <option>Pending</option>
+                        <option>In Progress</option>
+                        <option>Ready</option>
+                        <option>Completed</option>
+                    </select>
+                    <button class="bg-primary-50 text-primary-600 px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary-100 transition-smooth">
+                        <svg class="w-4 h-4 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                        </svg>
+                        Refresh
+                    </button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+                <!-- Order Card 1 -->
+                <div class="card p-6 border-l-4 border-l-warning-400">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center space-x-3">
+                            <span class="text-mono text-lg font-bold text-text-primary">#ORD-2547</span>
+                            <span class="bg-warning-100 text-warning-600 px-2 py-1 rounded-full text-xs font-medium">In Progress</span>
+                        </div>
+                        <span class="text-sm text-text-secondary">2:15 PM</span>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <p class="text-sm text-text-secondary mb-2">Customer: <span class="font-medium text-text-primary">Rahul Kumar</span></p>
+                        <p class="text-sm text-text-secondary mb-2">Payment: <span class="text-success-600 font-medium">UPI Paid</span></p>
+                        <p class="text-sm text-text-secondary">Assigned to: <span class="font-medium text-text-primary">Chef Ravi</span></p>
+                    </div>
+
+                    <div class="mb-4">
+                        <h4 class="font-medium text-text-primary mb-2">Items:</h4>
+                        <div class="space-y-1">
+                            <div class="flex justify-between text-sm">
+                                <span>2x Masala Dosa</span>
+                                <span class="font-medium">₹90</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span>1x Filter Coffee</span>
+                                <span class="font-medium">₹25</span>
+                            </div>
+                        </div>
+                        <div class="border-t mt-2 pt-2">
+                            <div class="flex justify-between font-semibold">
+                                <span>Total</span>
+                                <span class="text-primary-600">₹115</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-4 bg-gray-50 p-3 rounded-lg">
+                        <p class="text-sm text-text-secondary">Special Instructions:</p>
+                        <p class="text-sm text-text-primary font-medium">Extra spicy, less oil</p>
+                    </div>
+
+                    <div class="flex space-x-2">
+                        <button class="flex-1 bg-success-500 text-white py-2 px-3 rounded-lg text-sm font-medium hover:bg-success-600 transition-smooth">
+                            Mark Ready
+                        </button>
+                        <button class="bg-gray-100 text-gray-600 py-2 px-3 rounded-lg text-sm font-medium hover:bg-gray-200 transition-smooth">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Order Card 2 -->
+                <div class="card p-6 border-l-4 border-l-primary-400">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center space-x-3">
+                            <span class="text-mono text-lg font-bold text-text-primary">#ORD-2548</span>
+                            <span class="bg-primary-100 text-primary-600 px-2 py-1 rounded-full text-xs font-medium">Pending</span>
+                        </div>
+                        <span class="text-sm text-text-secondary">2:17 PM</span>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <p class="text-sm text-text-secondary mb-2">Customer: <span class="font-medium text-text-primary">Priya Sharma</span></p>
+                        <p class="text-sm text-text-secondary mb-2">Payment: <span class="text-success-600 font-medium">Card Paid</span></p>
+                        <p class="text-sm text-text-secondary">Assign to: 
+                            <select class="ml-1 text-sm border rounded px-2 py-1">
+                                <option>Select Chef</option>
+                                <option>Chef Ravi</option>
+                                <option>Chef Meera</option>
+                                <option>Chef Suresh</option>
+                            </select>
+                        </p>
+                    </div>
+
+                    <div class="mb-4">
+                        <h4 class="font-medium text-text-primary mb-2">Items:</h4>
+                        <div class="space-y-1">
+                            <div class="flex justify-between text-sm">
+                                <span>1x Veg Thali</span>
+                                <span class="font-medium">₹85</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span>1x Lassi</span>
+                                <span class="font-medium">₹30</span>
+                            </div>
+                        </div>
+                        <div class="border-t mt-2 pt-2">
+                            <div class="flex justify-between font-semibold">
+                                <span>Total</span>
+                                <span class="text-primary-600">₹115</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex space-x-2">
+                        <button class="flex-1 bg-primary text-white py-2 px-3 rounded-lg text-sm font-medium hover:bg-primary-700 transition-smooth">
+                            Start Preparation
+                        </button>
+                        <button class="bg-gray-100 text-gray-600 py-2 px-3 rounded-lg text-sm font-medium hover:bg-gray-200 transition-smooth">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Order Card 3 -->
+                <div class="card p-6 border-l-4 border-l-success-400">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center space-x-3">
+                            <span class="text-mono text-lg font-bold text-text-primary">#ORD-2546</span>
+                            <span class="bg-success-100 text-success-600 px-2 py-1 rounded-full text-xs font-medium">Ready</span>
+                        </div>
+                        <span class="text-sm text-text-secondary">2:10 PM</span>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <p class="text-sm text-text-secondary mb-2">Customer: <span class="font-medium text-text-primary">Amit Patel</span></p>
+                        <p class="text-sm text-text-secondary mb-2">Payment: <span class="text-success-600 font-medium">UPI Paid</span></p>
+                        <p class="text-sm text-text-secondary">Prepared by: <span class="font-medium text-text-primary">Chef Meera</span></p>
+                    </div>
+
+                    <div class="mb-4">
+                        <h4 class="font-medium text-text-primary mb-2">Items:</h4>
+                        <div class="space-y-1">
+                            <div class="flex justify-between text-sm">
+                                <span>3x Samosa</span>
+                                <span class="font-medium">₹30</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span>2x Masala Chai</span>
+                                <span class="font-medium">₹30</span>
+                            </div>
+                        </div>
+                        <div class="border-t mt-2 pt-2">
+                            <div class="flex justify-between font-semibold">
+                                <span>Total</span>
+                                <span class="text-primary-600">₹60</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-4 bg-success-50 p-3 rounded-lg">
+                        <p class="text-sm text-success-600 font-medium">✓ Order ready for pickup</p>
+                        <p class="text-xs text-success-600">Customer notified at 2:13 PM</p>
+                    </div>
+
+                    <div class="flex space-x-2">
+                        <button class="flex-1 bg-accent text-white py-2 px-3 rounded-lg text-sm font-medium hover:bg-accent-700 transition-smooth">
+                            Mark Completed
+                        </button>
+                        <button class="bg-gray-100 text-gray-600 py-2 px-3 rounded-lg text-sm font-medium hover:bg-gray-200 transition-smooth">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-5 5-5-5h5v-5a7.5 7.5 0 00-15 0v5h5l-5 5-5-5h5V7a9.5 9.5 0 0119 0v10z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu Management & Analytics -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Menu Management -->
+            <section>
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-2xl font-bold text-text-primary">Menu Management</h2>
+                    <button class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary-700 transition-smooth">
+                        <svg class="w-4 h-4 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                        </svg>
+                        Add Item
+                    </button>
+                </div>
+
+                <div class="card p-6">
+                    <div class="space-y-4">
+                        <!-- Menu Item 1 -->
+                        <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                            <div class="flex items-center space-x-4">
+                                <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Masala Dosa" class="w-12 h-12 object-cover rounded-lg" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                <div>
+                                    <h4 class="font-medium text-text-primary">Masala Dosa</h4>
+                                    <p class="text-sm text-text-secondary">₹45 • Available</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <button class="bg-success-100 text-success-600 px-3 py-1 rounded-full text-xs font-medium">
+                                    Available
+                                </button>
+                                <button class="text-gray-400 hover:text-gray-600">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Menu Item 2 -->
+                        <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                            <div class="flex items-center space-x-4">
+                                <img src="https://images.pixabay.com/photos/2017/06/16/11/38/breakfast-2408818_960_720.jpg" alt="Vada Pav" class="w-12 h-12 object-cover rounded-lg" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                <div>
+                                    <h4 class="font-medium text-text-primary">Vada Pav</h4>
+                                    <p class="text-sm text-text-secondary">₹25 • Low Stock</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <button class="bg-warning-100 text-warning-600 px-3 py-1 rounded-full text-xs font-medium">
+                                    Low Stock
+                                </button>
+                                <button class="text-gray-400 hover:text-gray-600">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Menu Item 3 -->
+                        <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg opacity-60">
+                            <div class="flex items-center space-x-4">
+                                <img src="https://images.unsplash.com/photo-1606491956689-2ea866880c84?auto=format&fit=crop&w=400&q=80" alt="Samosa" class="w-12 h-12 object-cover rounded-lg" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                <div>
+                                    <h4 class="font-medium text-text-primary">Samosa</h4>
+                                    <p class="text-sm text-text-secondary">₹10 • Out of Stock</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <button class="bg-error-100 text-error-600 px-3 py-1 rounded-full text-xs font-medium">
+                                    Out of Stock
+                                </button>
+                                <button class="text-gray-400 hover:text-gray-600">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 pt-4 border-t">
+                        <h4 class="font-medium text-text-primary mb-3">Daily Specials</h4>
+                        <div class="bg-secondary-50 p-4 rounded-lg">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="font-medium text-text-primary">Today's Special: Chole Bhature</p>
+                                    <p class="text-sm text-text-secondary">₹65 (20% off) • 15 orders today</p>
+                                </div>
+                                <button class="bg-secondary text-white px-3 py-1 rounded-lg text-sm font-medium hover:bg-secondary-600 transition-smooth">
+                                    Edit
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Analytics & Reports -->
+            <section>
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-2xl font-bold text-text-primary">Analytics & Reports</h2>
+                    <select class="input-field py-2 px-3 text-sm">
+                        <option>Today</option>
+                        <option>This Week</option>
+                        <option>This Month</option>
+                    </select>
+                </div>
+
+                <div class="space-y-6">
+                    <!-- Popular Items -->
+                    <div class="card p-6">
+                        <h3 class="font-semibold text-text-primary mb-4">Popular Items Today</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center">
+                                        <span class="text-primary-600 font-bold text-sm">1</span>
+                                    </div>
+                                    <span class="text-sm font-medium text-text-primary">Masala Dosa</span>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-sm font-medium text-text-primary">34 orders</p>
+                                    <p class="text-xs text-text-secondary">₹1,530 revenue</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 bg-secondary-100 rounded-lg flex items-center justify-center">
+                                        <span class="text-secondary-600 font-bold text-sm">2</span>
+                                    </div>
+                                    <span class="text-sm font-medium text-text-primary">Veg Thali</span>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-sm font-medium text-text-primary">28 orders</p>
+                                    <p class="text-xs text-text-secondary">₹2,380 revenue</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 bg-accent-100 rounded-lg flex items-center justify-center">
+                                        <span class="text-accent-600 font-bold text-sm">3</span>
+                                    </div>
+                                    <span class="text-sm font-medium text-text-primary">Masala Chai</span>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-sm font-medium text-text-primary">52 orders</p>
+                                    <p class="text-xs text-text-secondary">₹780 revenue</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Customer Satisfaction -->
+                    <div class="card p-6">
+                        <h3 class="font-semibold text-text-primary mb-4">Customer Satisfaction</h3>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="text-center">
+                                <p class="text-3xl font-bold text-success-600">4.6</p>
+                                <p class="text-sm text-text-secondary">Average Rating</p>
+                            </div>
+                            <div class="text-center">
+                                <p class="text-3xl font-bold text-primary-600">89%</p>
+                                <p class="text-sm text-text-secondary">Satisfaction Rate</p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-2">
+                            <div class="flex items-center space-x-2">
+                                <span class="text-sm text-text-secondary w-8">5★</span>
+                                <div class="flex-1 bg-gray-200 rounded-full h-2">
+                                    <div class="bg-success-500 h-2 rounded-full" style="width: 68%"></div>
+                                </div>
+                                <span class="text-sm text-text-secondary">68%</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <span class="text-sm text-text-secondary w-8">4★</span>
+                                <div class="flex-1 bg-gray-200 rounded-full h-2">
+                                    <div class="bg-success-400 h-2 rounded-full" style="width: 21%"></div>
+                                </div>
+                                <span class="text-sm text-text-secondary">21%</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <span class="text-sm text-text-secondary w-8">3★</span>
+                                <div class="flex-1 bg-gray-200 rounded-full h-2">
+                                    <div class="bg-warning-400 h-2 rounded-full" style="width: 8%"></div>
+                                </div>
+                                <span class="text-sm text-text-secondary">8%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Feedback -->
+                    <div class="card p-6">
+                        <h3 class="font-semibold text-text-primary mb-4">Recent Feedback</h3>
+                        <div class="space-y-4">
+                            <div class="bg-success-50 p-3 rounded-lg">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-sm font-medium text-text-primary">Priya S.</span>
+                                    <div class="flex items-center space-x-1">
+                                        <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                        </svg>
+                                        <span class="text-sm text-text-secondary">5.0</span>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-text-secondary">"Excellent dosa! Quick service and great taste."</p>
+                            </div>
+                            
+                            <div class="bg-warning-50 p-3 rounded-lg">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-sm font-medium text-text-primary">Amit K.</span>
+                                    <div class="flex items-center space-x-1">
+                                        <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                        </svg>
+                                        <span class="text-sm text-text-secondary">3.0</span>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-text-secondary">"Food was good but took longer than expected."</p>
+                                <button class="mt-2 text-xs text-accent-600 hover:text-accent-700 font-medium">
+                                    Respond to feedback
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Quick Actions Floating Button -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <div class="relative">
+            <button id="quickActionsBtn" class="w-14 h-14 bg-primary text-white rounded-full shadow-lg hover:bg-primary-700 transition-smooth flex items-center justify-center">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                </svg>
+            </button>
+            
+            <div id="quickActionsMenu" class="absolute bottom-16 right-0 bg-white rounded-lg shadow-lg border border-gray-200 p-2 space-y-2 hidden">
+                <a href="live_status_dashboard.html" class="flex items-center space-x-2 px-3 py-2 text-sm text-text-primary hover:bg-gray-50 rounded-lg transition-smooth">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                    </svg>
+                    <span>Live Dashboard</span>
+                </a>
+                <a href="menu_catalog.html" class="flex items-center space-x-2 px-3 py-2 text-sm text-text-primary hover:bg-gray-50 rounded-lg transition-smooth">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                    </svg>
+                    <span>Menu Catalog</span>
+                </a>
+                <button class="flex items-center space-x-2 px-3 py-2 text-sm text-text-primary hover:bg-gray-50 rounded-lg transition-smooth w-full text-left">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                    </svg>
+                    <span>Generate Report</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Quick Actions Menu Toggle
+        document.getElementById('quickActionsBtn').addEventListener('click', function() {
+            const menu = document.getElementById('quickActionsMenu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const btn = document.getElementById('quickActionsBtn');
+            const menu = document.getElementById('quickActionsMenu');
+            
+            if (!btn.contains(event.target) && !menu.contains(event.target)) {
+                menu.classList.add('hidden');
+            }
+        });
+
+        // Auto-refresh order data every 30 seconds
+        setInterval(function() {
+            // Simulate real-time updates
+            console.log('Refreshing order data...');
+        }, 30000);
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>
